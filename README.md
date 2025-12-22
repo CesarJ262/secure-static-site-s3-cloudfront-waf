@@ -19,7 +19,8 @@ By decoupling the origin (S3) from the edge (CloudFront) and applying an active 
 
 ### Layer 1: Origin Hardening (S3)
 - Provisioned a private S3 bucket with **Block All Public Access** strictly enforced.
-- **Security Verification:** ![Access Denied Proof](path/to/your/s3-denied-screenshot.png)
+- **Security Verification:** <img width="1559" height="305" alt="image" src="https://github.com/user-attachments/assets/7a2113b3-5fc5-4a34-a02f-45c6bb04c739" />
+
   *Direct origin access is forbidden, mitigating data exfiltration risks.*
 
 ### Layer 2: Edge Delivery & Encryption (CloudFront)
