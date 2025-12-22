@@ -45,6 +45,3 @@ This infrastructure is designed to neutralize common cloud-based attack vectors:
 - [ ] Migrate infrastructure to **Terraform (IaC)** for automated provisioning.
 - [ ] Implement **AWS CloudWatch** dashboards for real-time security monitoring.
 - [ ] Add custom WAF rules for geo-blocking and rate limiting.
-
----
-**Author:** CesarJ262
