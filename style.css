@@ -1,0 +1,304 @@
+:root {
+    --bg-color: #0d1117;
+    --card-bg: #161b22;
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+    --accent-color: #00ff41;
+    /* Hacker Green */
+    --accent-dim: rgba(0, 255, 65, 0.1);
+    --border-color: #30363d;
+    --font-mono: 'Fira Code', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    font-size: 14px;
+}
+
+/* Scanline effect */
+.scanline {
+    width: 100%;
+    height: 100px;
+    z-index: 10;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 255, 65, 0.04) 50%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0.1;
+    position: absolute;
+    bottom: 100%;
+    animation: scanline 10s linear infinite;
+    position: fixed;
+    /* Fixed to viewport */
+    pointer-events: none;
+}
+
+@keyframes scanline {
+    0% {
+        bottom: 100%;
+    }
+
+    100% {
+        bottom: -100%;
+    }
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 5px var(--accent-dim);
+    letter-spacing: -1px;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.contact-info a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: var(--accent-color);
+}
+
+.contact-info i {
+    margin-right: 0.5rem;
+    color: var(--accent-color);
+}
+
+/* Terminal Sections */
+.terminal-section {
+    margin-bottom: 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: var(--border-color);
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.terminal-icon {
+    width: 44px;
+    height: 12px;
+    position: relative;
+    margin-right: 12px;
+    flex: 0 0 44px;
+}
+
+.terminal-icon::before,
+.terminal-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal-icon::before {
+    left: 0;
+    background-color: #ff5f56;
+}
+
+.terminal-icon::after {
+    left: 16px;
+    background-color: #ffbd2e;
+    box-shadow: 20px 0 0 #27c93f;
+}
+
+.terminal-body {
+    padding: 1.5rem;
+}
+
+/* Ensure paragraph text in terminal bodies wraps and breaks gracefully */
+.terminal-body p,
+.typing-effect {
+    white-space: normal;
+    /* changed from pre-wrap to avoid indentation issues */
+    overflow-wrap: anywhere;
+    word-break: normal;
+    line-height: 1.6;
+}
+
+h3 {
+    color: #e6edf3;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+/* Ensure terminal header text truncates instead of being overlapped */
+.terminal-header>*:not(.terminal-icon) {
+    min-width: 0;
+    /* allow flex shrinking */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Lists and details */
+.skill-list,
+.job-details,
+.edu-list {
+    list-style: none;
+}
+
+.skill-list li {
+    margin-bottom: 0.5rem;
+}
+
+.prompt {
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+strong {
+    color: #79c0ff;
+    /* Soft Blue for keys */
+}
+
+/* Experience Section */
+.job {
+    margin-bottom: 2rem;
+}
+
+.job:last-child {
+    margin-bottom: 0;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin-bottom: 0.2rem;
+}
+
+.company-info {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.date {
+    color: var(--accent-color);
+    font-size: 0.85rem;
+}
+
+.job-details li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.job-details li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+/* Education */
+.edu-item {
+    margin-bottom: 1.5rem;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.edu-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 0.2rem;
+}
+
+.edu-list li:last-child {
+    border-bottom: none;
+}
+
+/* Glitch Effect on Hover (Simple) */
+h1:hover {
+    text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+
+    .job-header,
+    .edu-list li {
+        flex-direction: column;
+    }
+
+    .date {
+        margin-top: 0.2rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
