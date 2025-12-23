@@ -33,7 +33,8 @@ By decoupling the origin (S3) from the edge (CloudFront) and applying an active 
   - **Core Rule Set (CRS):** Protection against OWASP Top 10 (SQLi, XSS, etc.).
   - **IP Reputation:** Proactive blocking of known malicious actors and botnets.
 - **Security Validation:**
-  ![WAF Blocking Evidence](path/to/your/waf-block-screenshot.png)
+  <img width="2525" height="409" alt="image" src="https://github.com/user-attachments/assets/5c04ab99-8cae-42a3-85ef-546c27e73bd3" />
+
   *Successful mitigation of unauthorized/malicious request patterns at the edge.*
 
 ## 🚩 Security Assessment (Red Team Perspective)
