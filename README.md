@@ -19,7 +19,8 @@ By decoupling the origin (S3) from the edge (CloudFront) and applying an active 
 
 ### Layer 1: Origin Hardening (S3)
 - Provisioned a private S3 bucket with **Block All Public Access** strictly enforced.
-- **Security Verification:** ![Access Denied Proof](path/to/your/s3-denied-screenshot.png)
+- **Security Verification:** <img width="1559" height="305" alt="image" src="https://github.com/user-attachments/assets/7a2113b3-5fc5-4a34-a02f-45c6bb04c739" />
+
   *Direct origin access is forbidden, mitigating data exfiltration risks.*
 
 ### Layer 2: Edge Delivery & Encryption (CloudFront)
@@ -32,7 +33,8 @@ By decoupling the origin (S3) from the edge (CloudFront) and applying an active 
   - **Core Rule Set (CRS):** Protection against OWASP Top 10 (SQLi, XSS, etc.).
   - **IP Reputation:** Proactive blocking of known malicious actors and botnets.
 - **Security Validation:**
-  ![WAF Blocking Evidence](path/to/your/waf-block-screenshot.png)
+  <img width="2525" height="409" alt="image" src="https://github.com/user-attachments/assets/5c04ab99-8cae-42a3-85ef-546c27e73bd3" />
+
   *Successful mitigation of unauthorized/malicious request patterns at the edge.*
 
 ## 🚩 Security Assessment (Red Team Perspective)
