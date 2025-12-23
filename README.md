@@ -9,8 +9,6 @@ By decoupling the origin (S3) from the edge (CloudFront) and applying an active 
 
 <img width="2065" height="994" alt="image" src="https://github.com/user-attachments/assets/935237db-705e-448f-99e4-a5dfcf911722" />
 
-*Architecture: User -> AWS WAF (Perimeter) -> Amazon CloudFront (Edge) -> Amazon S3 (Origin)*
-
 ## 🛠️ Technology Stack
 - **Amazon S3:** Origin storage hardened with "Block Public Access" and fine-grained resource policies.
 - **Amazon CloudFront:** Global Content Delivery Network (CDN) managing SSL/TLS termination and edge caching.
