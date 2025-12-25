@@ -6,8 +6,7 @@ This repository contains the architecture and configuration for a production-rea
 Originally deployed manually, the entire infrastructure has been migrated to **Terraform (Infrastructure as Code)** for automated, repeatable, and secure provisioning.
 
 ## 🏗️ Infrastructure Architecture
-<img width="2065" height="994" alt="Architecture Diagram" src="https://github.com/secure-static-site-s3-cloudfront-waf/img/Architecture.png" />
-
+![Architecture Diagram](img/Architecture.png)
 ## 🛠️ Technology Stack
 - **Amazon S3:** Hardened origin storage.
 - **Amazon CloudFront:** Global Content Delivery Network (CDN) with HTTPS enforcement.
@@ -18,7 +17,7 @@ Originally deployed manually, the entire infrastructure has been migrated to **T
 
 ### Layer 1: Origin Hardening (S3)
 - Provisioned a private S3 bucket with **Block All Public Access** strictly enforced.
-- **Security Verification:** <img width="1559" height="305" alt="S3 Access Denied" src="https://github.com/secure-static-site-s3-cloudfront-waf/img/access-test-denied-S3.png" />
+- **Security Verification:** ![S3 Access Denied](img/access-test-denied-S3.png)
 *Direct origin access is forbidden, mitigating data exfiltration risks.*
 
 ### Layer 2: Edge Delivery & Encryption (CloudFront)
@@ -30,7 +29,7 @@ Originally deployed manually, the entire infrastructure has been migrated to **T
   - **Core Rule Set (CRS):** SQLi and XSS protection.
   - **IP Reputation:** Blocking known malicious actors.
 - **Security Validation:**
-<img width="2525" height="409" alt="WAF Block" src="https://github.com/secure-static-site-s3-cloudfront-waf/img/security-validation-test.png" />
+![WAF Block Evidence](img/security-validation-test.png)
 *Successful mitigation of malicious request patterns at the edge.*
 
 ## 🚀 How to Use (Terraform)
